@@ -1,0 +1,147 @@
+{
+  "config_name": "basic_inbound_processing",
+  "description": "Basic HL7 to XML transformation - standard segments only",
+  "input_format": "hl7",
+  "output_format": "xml",
+  "mappings": {
+    "message_header": {
+      "sending_application": {
+        "source": "MSH.3",
+        "type": "string",
+        "required": true
+      },
+      "receiving_application": {
+        "source": "MSH.5",
+        "type": "string",
+        "required": true
+      },
+      "message_type": {
+        "source": "MSH.9.1",
+        "type": "string",
+        "required": true
+      },
+      "message_control_id": {
+        "source": "MSH.10",
+        "type": "string",
+        "required": true
+      },
+      "timestamp": {
+        "source": "MSH.7",
+        "type": "datetime",
+        "format": "YYYYMMDDHHMM",
+        "required": false
+      }
+    },
+    "patient": {
+      "patient_id": {
+        "source": "PID.4.1",
+        "type": "string",
+        "required": true
+      },
+      "last_name": {
+        "source": "PID.6.1",
+        "type": "string",
+        "required": true
+      },
+      "first_name": {
+        "source": "PID.6.2",
+        "type": "string",
+        "required": true
+      },
+      "middle_name": {
+        "source": "PID.6.3",
+        "type": "string",
+        "required": false
+      },
+      "date_of_birth": {
+        "source": "PID.8",
+        "type": "date",
+        "format": "YYYYMMDD",
+        "required": true
+      },
+      "gender": {
+        "source": "PID.9",
+        "type": "string",
+        "required": false
+      },
+      "race": {
+        "source": "PID.11.2",
+        "type": "string",
+        "required": false
+      },
+      "address": {
+        "street": {
+          "source": "PID.12.1",
+          "type": "string",
+          "required": false
+        },
+        "city": {
+          "source": "PID.12.3",
+          "type": "string",
+          "required": false
+        },
+        "state": {
+          "source": "PID.12.4",
+          "type": "string",
+          "required": false
+        },
+        "zip_code": {
+          "source": "PID.12.5",
+          "type": "string",
+          "required": false
+        }
+      },
+      "phone": {
+        "source": "PID.14.1",
+        "type": "string",
+        "required": false
+      }
+    },
+    "visit": {
+      "patient_class": {
+        "source": "PV1.3",
+        "type": "string",
+        "required": false
+      },
+      "location": {
+        "facility": {
+          "source": "PV1.4.1",
+          "type": "string",
+          "required": false
+        },
+        "room": {
+          "source": "PV1.4.2",
+          "type": "string",
+          "required": false
+        },
+        "bed": {
+          "source": "PV1.4.3",
+          "type": "string",
+          "required": false
+        }
+      },
+      "attending_doctor": {
+        "id": {
+          "source": "PV1.8.1",
+          "type": "string",
+          "required": false
+        },
+        "last_name": {
+          "source": "PV1.8.2",
+          "type": "string",
+          "required": false
+        },
+        "first_name": {
+          "source": "PV1.8.3",
+          "type": "string",
+          "required": false
+        }
+      }
+    }
+  },
+  "error_handling": {
+    "on_missing_required": "warn",
+    "on_validation_fail": "warn",
+    "log_level": "info"
+  }
+} 

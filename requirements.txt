@@ -1,0 +1,6 @@
+hl7==0.4.5
+lxml==4.9.3
+pytest==7.4.3
+mypy==1.7.1
+pytest-cov==4.1.0
+typing-extensions==4.8.0 

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HealthcareMessage version="1.0" timestamp="2023-12-15T14:30:00">
+  <MessageHeader>
+    <SendingApplication>EMR</SendingApplication>
+    <ReceivingApplication>MEDITECH</ReceivingApplication>
+    <MessageType>ADT</MessageType>
+    <MessageControlId>EMR67890</MessageControlId>
+    <Timestamp>2023-12-15 14:30</Timestamp>
+  </MessageHeader>
+  <Patient>
+    <PatientId>987654321</PatientId>
+    <LastName>SMITH</LastName>
+    <FirstName>JOHN</FirstName>
+    <MiddleName>DAVID</MiddleName>
+    <DateOfBirth>1975-08-22</DateOfBirth>
+    <Gender>M</Gender>
+    <Race>Hispanic</Race>
+    <Address>
+      <Street>456 ELM ST</Street>
+      <City>DAVIS</City>
+      <State>CA</State>
+      <ZipCode>95616</ZipCode>
+    </Address>
+    <Phone>(530)555-9876</Phone>
+  </Patient>
+  <Visit>
+    <PatientClass>Outpatient</PatientClass>
+    <Location>CLINIC^202^B</Location>
+    <AdmissionType>Elective</AdmissionType>
+    <AttendingDoctor>
+      <Id>789012</Id>
+      <LastName>WILLIAMS</LastName>
+      <FirstName>SARAH</FirstName>
+      <Degree>MD</Degree>
+    </AttendingDoctor>
+  </Visit>
+  <CustomSegments>
+    <Insurance>
+      <Carrier>AETNA</Carrier>
+      <PolicyNumber>POL456789</PolicyNumber>
+      <GroupNumber>GRP123</GroupNumber>
+      <Type>PRIMARY</Type>
+      <Status>ACTIVE</Status>
+    </Insurance>
+    <Medications>
+      <Medication>ASPIRIN^81MG^DAILY</Medication>
+      <Medication>METOPROLOL^25MG^BID</Medication>
+    </Medications>
+    <VitalSigns>
+      <Temperature>97.8^F</Temperature>
+      <BloodPressure>120/80^MMHG</BloodPressure>
+      <HeartRate>68^BPM</HeartRate>
+    </VitalSigns>
+  </CustomSegments>
+</HealthcareMessage> 
